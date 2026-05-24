@@ -12,8 +12,9 @@ public class BookingFactory {
     private static final DateTimeFormatter FMT = DateTimeFormatter.ofPattern("yyyy-MM-dd");
 
     public static Booking buildValidBooking(int roomId) {
-        LocalDate checkin = LocalDate.now().plusDays(1);
-        LocalDate checkout = checkin.plusDays(faker.number().numberBetween(1, 7));
+        // Start 6 months out to avoid conflicts with existing demo-site bookings
+        LocalDate checkin = LocalDate.now().plusMonths(6).plusDays(faker.number().numberBetween(1, 20));
+        LocalDate checkout = checkin.plusDays(faker.number().numberBetween(2, 5));
 
         Booking booking = new Booking();
         booking.setFirstname(faker.name().firstName());

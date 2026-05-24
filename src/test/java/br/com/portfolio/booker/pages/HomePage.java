@@ -12,7 +12,7 @@ public class HomePage {
     private final WebDriver driver;
     private final WebDriverWait wait;
 
-    private final By bodyTag        = By.tagName("body");
+    private final By welcomeHeading = By.xpath("//h1[contains(text(),'Welcome')]");
     private final By bookingSection = By.id("booking");
 
     public HomePage(WebDriver driver) {
@@ -25,7 +25,7 @@ public class HomePage {
     }
 
     public String getPageText() {
-        return wait.until(ExpectedConditions.visibilityOfElementLocated(bodyTag)).getText();
+        return wait.until(ExpectedConditions.visibilityOfElementLocated(welcomeHeading)).getText();
     }
 
     public boolean isRoomSectionVisible() {
