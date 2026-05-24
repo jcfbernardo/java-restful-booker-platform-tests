@@ -33,7 +33,7 @@ jobs:
 
       - name: Generate Allure report
         if: always()
-        run: mvn allure:report
+        run: mvn allure:report || true
 
       - name: Upload Allure results
         if: always()
@@ -49,9 +49,4 @@ jobs:
           name: allure-report
           path: target/site/allure-maven-plugin/
 
-      - name: Deploy report to GitHub Pages
-        if: github.ref == 'refs/heads/main' && always()
-        uses: peaceiris/actions-gh-pages@v4
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: target/site/allure-maven-plugin
+
