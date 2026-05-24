@@ -12,8 +12,8 @@ public class HomePage {
     private final WebDriver driver;
     private final WebDriverWait wait;
 
-    private final By bodyTag = By.tagName("body");
-    private final By roomSection = By.className("hotel-room-info");
+    private final By bodyTag        = By.tagName("body");
+    private final By bookingSection = By.id("booking");
 
     public HomePage(WebDriver driver) {
         this.driver = driver;
@@ -30,7 +30,7 @@ public class HomePage {
 
     public boolean isRoomSectionVisible() {
         try {
-            return wait.until(ExpectedConditions.visibilityOfElementLocated(roomSection)).isDisplayed();
+            return wait.until(ExpectedConditions.visibilityOfElementLocated(bookingSection)).isDisplayed();
         } catch (Exception e) {
             return false;
         }

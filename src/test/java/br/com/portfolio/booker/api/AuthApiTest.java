@@ -34,11 +34,11 @@ class AuthApiTest extends BaseApiTest {
 
     @Test
     @Story("API-002")
-    @DisplayName("Should return 403 on invalid login")
+    @DisplayName("Should return 401 on invalid login")
     @Severity(SeverityLevel.CRITICAL)
     void shouldReturn403OnInvalidLogin() {
         var response = authClient.login("wronguser", "wrongpass");
 
-        assertThat(response.statusCode()).isEqualTo(403);
+        assertThat(response.statusCode()).isEqualTo(401);
     }
 }

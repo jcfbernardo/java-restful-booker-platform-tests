@@ -12,10 +12,10 @@ public class LoginPage {
     private final WebDriver driver;
     private final WebDriverWait wait;
 
-    private final By usernameInput = By.id("username");
-    private final By passwordInput = By.id("password");
-    private final By loginButton   = By.id("doLogin");
-    private final By errorMessage  = By.className("alert-danger");
+    private final By usernameInput = By.cssSelector("input[placeholder='Enter username']");
+    private final By passwordInput = By.cssSelector("input[type='password']");
+    private final By loginButton   = By.xpath("//button[text()='Login']");
+    private final By errorAlert    = By.cssSelector("form [role='alert'], .alert, [class*='alert']");
 
     public LoginPage(WebDriver driver) {
         this.driver = driver;
@@ -23,7 +23,7 @@ public class LoginPage {
     }
 
     public void navigate(String baseUrl) {
-        driver.get(baseUrl + "/#/admin");
+        driver.get(baseUrl + "/admin");
     }
 
     public boolean isLoginFormVisible() {
@@ -42,7 +42,7 @@ public class LoginPage {
 
     public boolean isErrorMessageVisible() {
         try {
-            return wait.until(ExpectedConditions.visibilityOfElementLocated(errorMessage)).isDisplayed();
+            return wait.until(ExpectedConditions.visibilityOfElementLocated(errorAlert)).isDisplayed();
         } catch (Exception e) {
             return false;
         }

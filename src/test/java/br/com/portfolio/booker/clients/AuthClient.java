@@ -6,7 +6,7 @@ import static io.restassured.RestAssured.given;
 
 public class AuthClient {
 
-    private static final String AUTH_PATH = "/auth/login";
+    private static final String AUTH_PATH = "/api/auth/login";
 
     public Response login(String username, String password) {
         return given()

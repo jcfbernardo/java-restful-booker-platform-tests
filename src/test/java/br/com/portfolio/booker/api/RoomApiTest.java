@@ -52,18 +52,18 @@ class RoomApiTest extends BaseApiTest {
         var room = RoomFactory.buildValidRoom();
         var response = roomClient.createRoom(room, token);
 
-        assertThat(response.statusCode()).isEqualTo(201);
+        assertThat(response.statusCode()).isEqualTo(200);
     }
 
     @Test
     @Order(3)
     @Story("API-005")
-    @DisplayName("Should return 403 when creating room without auth")
+    @DisplayName("Should return 401 when creating room without auth")
     void shouldReturn403WhenCreatingRoomWithoutAuth() {
         var room = RoomFactory.buildValidRoom();
         var response = roomClient.createRoomWithoutAuth(room);
 
-        assertThat(response.statusCode()).isEqualTo(403);
+        assertThat(response.statusCode()).isEqualTo(401);
     }
 
     @Test

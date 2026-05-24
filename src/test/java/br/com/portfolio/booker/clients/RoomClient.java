@@ -7,7 +7,7 @@ import static io.restassured.RestAssured.given;
 
 public class RoomClient {
 
-    private static final String ROOM_PATH = "/room/";
+    private static final String ROOM_PATH = "/api/room";
 
     public Response listRooms() {
         return given()

@@ -7,7 +7,7 @@ import static io.restassured.RestAssured.given;
 
 public class BookingClient {
 
-    private static final String BOOKING_PATH = "/booking/";
+    private static final String BOOKING_PATH = "/api/booking";
 
     public Response createBooking(Booking booking) {
         return given()
