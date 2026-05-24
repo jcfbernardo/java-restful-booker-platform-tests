@@ -1,4 +1,0 @@
-[     789ms] [ERROR] Failed to load resource: the server responded with a status of 403 () @ https://automationintesting.online/api/auth/validate:0
-[    1054ms] [ERROR] Failed to load resource: the server responded with a status of 403 () @ https://automationintesting.online/api/auth/validate:0
-[    1157ms] [VERBOSE] [DOM] Input elements should have autocomplete attributes (suggested: "current-password"): (More info: https://goo.gl/9p2vKq) %o @ https://automationintesting.online/admin:0
-[   27857ms] [ERROR] Failed to load resource: the server responded with a status of 401 () @ https://automationintesting.online/api/auth/login:0
